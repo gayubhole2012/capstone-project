@@ -1,0 +1,29 @@
+.header-img{
+ display:flex;
+ width:100%;
+}
+
+.container{
+    display:flex;
+    margin-top: 10px;
+    margin-left: 60px;
+}
+
+img{
+    justify-content: flex-start;
+    width:200px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a {
+	text-decoration: none;
+}
+.container a {
+	padding: 10px 15px;
+	text-align: center;
+	display: block;
+}
