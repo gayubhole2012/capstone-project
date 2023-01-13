@@ -1,0 +1,162 @@
+.little-lemon {
+    color: yellowgreen;
+    font-family: serif;
+    letter-spacing: 4px;
+    margin: 0
+}
+
+.chica {
+    color: white;
+    letter-spacing: 1px;
+    margin: 0
+}
+
+.paragra {
+    font-family: serif;
+    letter-spacing: 1px;
+    margin: 3px;
+    color: white;
+}
+
+.img-main {
+    position: absolute;
+    top: 25px;
+    border-radius: 10px;
+    right: 35px;
+}
+
+.wrapper {
+    width: 1000px;
+}
+
+.button-col {
+    background-color: yellow;
+    border-radius: 8px;
+    padding: 10px;
+    width:150px
+}
+
+.h-tag {
+    margin: 16px 0;
+    font-size: 35px;
+    font-family: serif;
+    width: inherit;
+}
+
+.button-tag {
+    margin: 16px 0;
+    background-color: yellow;
+    padding: 9px;
+    border-radius: 10px;
+    width: 200px;
+}
+
+.chicago {
+    width: 1000px;
+}
+
+.main-sec {
+    display: flex;
+    flex-direction: column;
+}
+
+.banner {
+    background-color: lightseagreen;
+}
+
+.main-con {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 25px 0;
+}
+.special{
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    width: 96%;;
+}
+.special-week{
+    display:flex;
+    flex-direction: column;
+}
+.online-menu{
+    display: flex;
+    flex-direction: row;
+}
+.span-money{
+    color: red;
+    margin-left: 58px;
+}
+.box{
+    width: 100px;
+    border: 5px solid green;
+    padding: 70px;
+    margin: 15px;
+}
+.test{
+    display: flex;
+   justify-items: flex-start;
+}
+.test-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.salad-img{
+    width: 250px;
+    height: 168px;
+    object-fit: cover;
+}
+.online{
+    margin-right:15px;
+}
+
+.test{
+    display: flex;
+    justify-content: center;
+    font-family: serif;
+}
+.lemon-img{
+    width: 250px;
+    height: 168px;
+    object-fit: cover;
+}
+
+.menu-img{
+    margin:0px;
+}
+span{
+    color: red;
+}
+.menu-name{
+    display: flex;
+    flex-direction: row
+}
+.dummy-img{
+    width:100px;
+    display:flex;
+}
+.checked{
+    color: orange;
+}
+@media (max-width: 1200px) {
+    .img-main {
+       width: 30%;
+   }
+}
+
+@media(max-width: 1200px){
+    .test-box{
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+}
+@media(max-width:1200px){
+    .online-menu{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

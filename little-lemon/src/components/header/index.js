@@ -1,18 +1,18 @@
-import  React from 'react';
-import Little from '../../assets/images/littlelemon.png';
+import React from 'react';
+import Little from '../../assets/images/littlelemon.jpeg';
 import Nav from './Nav';
 import './style.css';
 
-function Header(){
-   return(
+function Header() {
+    return (
         <>
-   <header className='header-img'>
-    <div className="photo">
-       <img src= {Little} alt="" />
-       </div>
-       <Nav/>
-   </header>
-    </>
+            <header className='full-width'>
+                <div className="inner-width">
+                    <img src={Little} alt="" />
+                    <Nav />
+                </div>
+            </header>
+        </>
     )
 }
 export default Header;
