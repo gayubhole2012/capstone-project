@@ -1,0 +1,28 @@
+
+.jumbotron-image{
+    /*background-image: url(https://images.unsplash.com/photo-1552152974-19b9caf99137?fit=crop&w=1350&q=80);*/
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+form{
+    border:2px solid  black;
+    padding:10px;
+}
+.jumbotron-image label{
+    text-align: left;
+
+}
+.jumbotron-image input, .jumbotron-image select, .jumbotron-image text{
+    width:100%;
+    padding: 6px 10px;
+    margin:10px 0;
+    border: 1px solid yellowgreen;
+    box-sizing: border-box;
+    }
+.jumbotron-image button{
+    background-color: yellow;
+    color:black;
+    padding:8px;
+    border-radius: 8px;
+}
