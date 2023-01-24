@@ -1,7 +1,8 @@
 import React from 'react';
 
 function BookingForm(props) {
-    const { name, avaiableTime, handleSubmit, date, setDate, time, setTime, setName, guest, setGuest, occasion, setOccasion } = props;
+    const { name, avaiableTimes, handleSubmit, date, setDate,
+         setName, guest, setGuest, occasion, setOccasion, dispatch } = props;
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -28,9 +29,10 @@ function BookingForm(props) {
                 <select
                     required
                     id='res-time'
-                    value={time}
-                    onChange={e => setTime(e.target.value)}>
-                    {avaiableTime.map((time) => {
+                    onChange={e => {
+                        dispatch({ type: "TIME_CHANGE", time: e.target.value });
+                    }}>
+                    {avaiableTimes.map((time) => {
                         return <option>{time}</option>
                     })}
                 </select>
