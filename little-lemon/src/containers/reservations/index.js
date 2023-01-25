@@ -12,6 +12,7 @@ const updateTimes = (state, action) => {
     };
 }
 
+
 const Reservation = () => {
     const [name, setName] = useState('');
     const [date, setDate] = useState('');
@@ -19,10 +20,12 @@ const Reservation = () => {
     const [occasion, setOccasion] = useState('');
     const intialTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
     const [avaiableTimes, dispatch] = useReducer(updateTimes, intialTimes);
+    console.log(avaiableTimes);
     const handleSubmit = (e) => {
         e.preventDefault();
         alert('booking confirmed');
     }
+
     return (
         <>
             <div className='jumbotron-image'>

@@ -6,7 +6,7 @@ function BookingForm(props) {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <h2>Booking Form</h2>
+                <h2>Book Now</h2>
                 <label htmlFor='name'>Name:</label>
                 <input
                     required
@@ -28,12 +28,12 @@ function BookingForm(props) {
                 <label htmlFor='time'> Choose Time:</label>
                 <select
                     required
-                    id='res-time'
+                    data-testid='res-time'
                     onChange={e => {
                         dispatch({ type: "TIME_CHANGE", time: e.target.value });
                     }}>
                     {avaiableTimes.map((time) => {
-                        return <option>{time}</option>
+                        return <option key={time}>{time}</option>
                     })}
                 </select>
                 <label htmlFor='guests'>Number Of Guest:</label>
