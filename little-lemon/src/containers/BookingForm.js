@@ -23,7 +23,7 @@ function BookingForm(props) {
                         value={date}
                         name='date'
                         onChange={e => setDate(e.target.value)}
-                    />
+                        />
                 </label>
                 <label htmlFor='time'> Choose Time:</label>
                 <select
