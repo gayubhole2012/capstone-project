@@ -4,7 +4,7 @@ import { useState } from 'react';
 import BookingForm from '../BookingForm';
 
 const seededRandom = function (seed) {
-    var m = 2**35 - 31;
+    var m = 2 ** 35 - 31;
     var a = 185852;
     var s = seed % m;
     return function () {
@@ -12,21 +12,21 @@ const seededRandom = function (seed) {
     };
 }
 
-const fetchAPI = function(date) {
+const fetchAPI = function (date) {
     let result = [];
     let random = seededRandom(date.getDate());
 
-    for(let i = 17; i <= 23; i++) {
-        if(random() < 0.5) {
+    for (let i = 17; i <= 23; i++) {
+        if (random() < 0.5) {
             result.push(i + ':00');
         }
-        if(random() < 0.5) {
+        if (random() < 0.5) {
             result.push(i + ':30');
         }
     }
     return result;
 };
-const submitAPI = function(formData) {
+const submitAPI = function (formData) {
     return true;
 };
 
@@ -46,30 +46,60 @@ const Reservation = () => {
     const [name, setName] = useState('');
     const [guest, setGuest] = useState('');
     const [occasion, setOccasion] = useState('');
-    const [dateStr, setDate] = useState((new Date()).toDateString());
+    const [dateStr, setDate] = useState((new Date()));
     const [avaiableTimes, dispatch] = useReducer(updateTimes, []);
+
+    const clearForm = () => {
+        setName('');
+        setGuest('');
+        setOccasion('');
+    };
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        const formData = {
+         const formData = {
             name,
+            dateStr,
+            avaiableTimes,
             guest,
             occasion,
-            dateStr
-        }
+       }
         submitAPI(formData)
-        alert('booking confirmed');
+        alert(JSON.stringify(formData));
+        clearForm();
     }
+    const isValid = () =>{
+        return(
+            name &&
+            guest &&
+            occasion  &&
+            dateStr &&
+            avaiableTimes
+        )
+    }
+    const PastDate = () => {
+        const dtToday = new Date();
+        let month = dtToday.getMonth() + 1;
+        let day = dtToday.getDate();
+        const year = dtToday.getFullYear();
+        if (month < 10) month = "0" + month.toString();
+        if (day < 10) day = "0" + day.toString();
+        const maxDate = year + "-" + month + "-" + day;
+        return maxDate;
+      };
 
-     useEffect(()=>{
-        dispatch({ type: "UPDATE_TIME", allTimes: fetchAPI(new Date(dateStr)) });
-     },[dateStr])
+    useEffect(() => {
+        dispatch({ type: "UPDATE_TIME", allTimes: (fetchAPI(new Date(dateStr)))});
+    }, [dateStr]);
+
     return (
         <>
             <div className='jumbotron-image'>
                 <BookingForm name={name}
                     setName={setName} date={dateStr} setDate={setDate} dispatch={dispatch}
                     guest={guest} setGuest={setGuest} occasion={occasion}
-                    setOccasion={setOccasion} avaiableTimes={avaiableTimes} handleSubmit={handleSubmit}  />
+                    setOccasion={setOccasion} avaiableTimes={avaiableTimes} handleSubmit={handleSubmit} PastDate={PastDate} isValid= {isValid} />
 
             </div>
         </>
